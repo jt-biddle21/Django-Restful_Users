@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <table>
+        {% for z in user %}
+            <tr>
+                <td><h2>Showing Info For User {{ z.id }}</h2></td>
+            </tr>
+            <tr>
+                <td>Full Name: {{ z.fname }} {{ z.lname }}</td>
+            </tr>
+            <tr>
+                <td>Email: {{ z.email }}</td>
+            </tr>
+            <tr>
+                <td>Created At: {{ z.created_at }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+        {% for u in user %}
+            <a href="/users/{{u.id}}/edit">Edit</a> | <a href="/users/{{u.id}}/delete">Delete</a> | <a href="/">Go Back</a>
+        {% endfor %}
+    </body>
+</html>

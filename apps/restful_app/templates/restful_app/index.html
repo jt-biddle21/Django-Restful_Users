@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>RESTful Users</title>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Created At</th>
+                <th>Actions</th>
+            </tr>
+            {% for x in all %}
+            <tr>
+                <td>{{x.id}}</td>
+                <td>{{x.fname}} {{x.lname}}</td>
+                <td>{{x.email}}</td>
+                <td>{{x.created_at}}</td>
+                <td><a href="/users/{{x.id}}/show">Show</a> | <a href="/users/{{x.id}}/edit">Edit</a> | <a href="/users/{{x.id}}/delete">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a href="/users/add">Add a User</a>
+    </body>
+</html>
